@@ -1,0 +1,260 @@
+:root {
+    --base-margin: 5px;
+    --base-padding: 5px;
+    --wrapper-width: 42rem;
+    --btn-height: 2rem;
+
+    --header-image-max-height: 15rem;
+    --radius-small: 5px;
+    --radius-normal: 10px;
+
+    --text-size-big: 1.125rem;
+    --text-size-medium: 1rem;
+    --text-size-small: 0.875rem;
+
+    --text-weight-bold: 700;
+    --text-weight-regular: 400;
+
+    --text-light-normal: 100%;
+    --text-light-muted: 70%;
+
+    --theme-toggle-time: 1s;
+}
+
+body.dark {
+    --svg-filter: brightness(0) saturate(100%) invert(94%) sepia(7%)
+        saturate(153%) hue-rotate(173deg) brightness(97%) contrast(88%);
+    --svg-filter-hover: brightness(0) saturate(100%) invert(57%) sepia(18%)
+        saturate(942%) hue-rotate(170deg) brightness(95%) contrast(85%);
+
+    --shadow-low: 0.5px 1px 2px hsl(0 0% 15%/0.7);
+    --shadow-medium:
+        1px 2px 2px hsl(0 0% 15%/0.333), 2px 4px 4px hsl(0 0% 15%/0.333),
+        3px 6px 6px hsl(0 0% 15%/0.333);
+    --shadow-high:
+        1px 2px 2px hsl(0 0% 15%/0.25), 2px 4px 4px hsl(0 0% 15%/0.25),
+        4px 8px 8px hsl(0 0% 15%/0.25), 8px 16px 16px hsl(0 0% 15%/0.25);
+}
+
+body.light {
+    --svg-filter: brightness(0) saturate(100%) invert(59%) sepia(0%)
+        saturate(0%) hue-rotate(159deg) brightness(86%) contrast(85%);
+    --svg-filter-hover: brightness(0) saturate(100%) invert(13%) sepia(11%)
+        saturate(3412%) hue-rotate(171deg) brightness(94%) contrast(88%);
+    --shadow-low: 0.5px 1px 2px hsl(0 0% 35%/0.7);
+    --shadow-medium:
+        1px 2px 2px hsl(0 0% 35%/0.333), 2px 4px 4px hsl(0 0% 35%/0.333),
+        3px 6px 6px hsl(0 0% 35%/0.333);
+    --shadow-high:
+        1px 2px 2px hsl(0 0% 35%/0.25), 2px 4px 4px hsl(0 0% 35%/0.25),
+        4px 8px 8px hsl(0 0% 35%/0.25), 8px 16px 16px hsl(0 0% 35%/0.25);
+}
+
+/*To make theme change smooth on all elements*/
+body,
+body * {
+    transition:
+        background-color var(--theme-toggle-time),
+        color var(--theme-toggle-time),
+        filter var(--theme-toggle-time);
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: var(--bg-dark);
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    /* gap: 10px; */
+}
+
+.btn-generic {
+    max-height: var(--btn-height);
+    border-radius: var(--radius-small);
+}
+
+.btn-theme-toggle {
+    max-width: var(--btn-height);
+    border-radius: var(--radius-normal);
+}
+
+.btn-theme-toggle,
+.btn-generic {
+    border: none;
+    box-shadow: var(--shadow-low);
+    padding: var(--base-padding);
+    background-color: var(--bg-light);
+    color: var(--text);
+    max-height: var(--btn-height);
+}
+
+.btn-theme-toggle-svg {
+    filter: var(--svg-filter);
+    width: 100%;
+    height: 100%;
+    max-width: 1.5rem;
+    max-height: 1.5rem;
+    transition:
+        transform 0.2s,
+        filter 0.2s;
+}
+
+.btn-theme-toggle:hover .btn-theme-toggle-svg {
+    transform: scale(1.1);
+}
+
+.btn-theme-toggle:hover,
+.btn-generic:hover {
+    background-color: var(--secondary);
+}
+
+path {
+    transition: d 1s ease;
+}
+
+h1,
+.form-fieldset-legend {
+    font-size: var(--text-size-big);
+    color: var(--text);
+    font-weight: var(--text-weight-bold);
+}
+
+h2,
+.form-input-label {
+    font-size: var(--text-size-medium);
+    color: var(--text);
+    font-weight: var(--text-weight-bold);
+}
+
+textarea {
+    resize: both;
+    overflow: auto;
+}
+
+p,
+input,
+textarea {
+    font-size: var(--text-size-medium);
+    color: var(--text-muted);
+}
+
+input,
+textarea {
+    padding: var(--base-padding);
+    margin: var(--base-margin);
+    border-radius: var(--radius-normal);
+    background-color: var(--bg);
+}
+
+.App {
+    /* display: flex;
+  flex-direction: column; */
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: calc(var(--btn-height) * 1.2);
+    gap: 20px;
+}
+
+.form-buttons {
+    margin: var(--base-margin);
+    display: flex;
+    gap: 10px;
+    position: fixed;
+    top: 0;
+    /* left: 0; */
+}
+
+.form-field-section {
+    box-shadow: var(--shadow-low);
+    border-radius: var(--radius-normal);
+    padding: var(--base-padding);
+    margin: var(--base-margin);
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field-list-entry,
+.form-field-main-details-entry {
+    box-shadow: var(--shadow-low);
+    background-color: var(--bg-light);
+    border-radius: var(--radius-normal);
+    padding: var(--base-padding);
+    margin: var(--base-margin);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-field-list-header {
+    padding: var(--base-padding);
+    margin: var(--base-margin);
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-field-list-header-location {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: var(--text-weight-bold);
+}
+
+.form-fieldset-legend {
+    padding: var(--base-padding);
+    margin: var(--base-margin);
+}
+
+.form-field-list-entry-btn-delete {
+    margin: var(--base-margin);
+    background-color: var(--danger);
+}
+
+.form-field-list-entry-btn-add-new {
+    margin: var(--base-margin);
+    align-self: center;
+}
+
+.form-field-list-dates {
+    display: flex;
+    gap: 25px;
+}
+
+.form-field-list-date-entry {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field-list-description {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input-label {
+    margin: var(--base-margin);
+}
+
+.form-input-field {
+    margin: var(--base-margin);
+}
+
+.input-text-area {
+    max-width: var(--wrapper-width);
+}
