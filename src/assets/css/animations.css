@@ -1,0 +1,81 @@
+@keyframes fadeInBounce {
+    0% {
+        opacity: 1;
+        transform: scale(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    80% {
+        transform: scale(1.05);
+    }
+
+    90% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes cardRise {
+    80% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes phone-wobble {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    25% {
+        transform: scale(1.2) rotate(0deg);
+    }
+
+    40% {
+        transform: scale(1.2) rotate(-12deg);
+    }
+
+    55% {
+        transform: scale(1.2) rotate(12deg);
+    }
+
+    70% {
+        transform: scale(1.2) rotate(-6deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes email-jelly-jump {
+    0% {
+        transform: translateY(0) scale(1, 1);
+    }
+
+    20% {
+        transform: translateY(0) scale(1.15, 0.85);
+    }
+
+    40% {
+        transform: translateY(-6px) scale(0.92, 1.08);
+    }
+
+    70% {
+        transform: translateY(0) scale(1.18, 0.82);
+    }
+
+    100% {
+        transform: translateY(0) scale(1, 1);
+    }
+}
