@@ -10,6 +10,6 @@ function DisplayField() {
     return;
 }
 
-export default function FormTemplate({ data }) {
+export default function FormTemplate() {
     return <div></div>;
 }

@@ -39,11 +39,11 @@ export default function FormTemplate({ setThemeClass }) {
         saveCV({ ...cvDraft });
     }
 
-    const actions = {
-        updateDraft: updateDraft,
-        cancelDraft: cancelDraft,
-        updateCvData: updateCvData,
-    };
+    // const actions = {
+    //     updateDraft: updateDraft,
+    //     cancelDraft: cancelDraft,
+    //     updateCvData: updateCvData,
+    // };
 
     function handleToggleCancelEdit() {
         cancelDraft();

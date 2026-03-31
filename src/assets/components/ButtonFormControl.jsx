@@ -1,7 +1,7 @@
 export default function ButtonFormControl({
     toggleEdit,
     editModeActive,
-    cancelEdit,
+    // cancelEdit,
     onClickAction = null,
     nameDefault = "Undefined BTN-default",
     nameInEdit = "Undefined BTN-edit",

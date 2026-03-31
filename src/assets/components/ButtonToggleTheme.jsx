@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function ButtonToggleTheme({ setThemeClass }) {
+export default function ButtonToggleTheme() {
     const [isLight, setIsLight] = useState(
         document.body.className === "light" ? true : false
     );

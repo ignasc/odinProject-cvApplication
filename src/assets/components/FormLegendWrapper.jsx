@@ -1,6 +1,6 @@
 export default function FormLegendWrapper({
     editModeActive,
-    formID,
+    // formID,
     children,
 }) {
     return editModeActive ? (
