@@ -8,4 +8,3 @@ This is a very simple CV form built using react.
 
 - Dark and light theme switcher with smooth, gentle transition.
 - Ability to add/delete entries to Education and Work sections.
-
